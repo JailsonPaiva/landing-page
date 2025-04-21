@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annie Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="logo.svg" alt="Logo AB" />
+
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About me</a>
+        <a href="#contact" class="contact-btn">Contact me</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>Drawn by Passion.<br />Defined by Creativity.</h1>
+          <a href="#contact" class="button">Contact me</a>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <h2>Showcase</h2>
+        <div class="gallery">
+          <img src="vinyl.png" alt="Vinyl design" />
+          <img src="draw-article.png" alt="Magazine design" />
+          <img src="book-case.png" alt="Book cover design" />
+          <img src="book-case.png" alt="Burger King Halloween campaign" />
+        </div>
+      </section>
+
+      <section class="my-work">
+        <h2>My work</h2>
+        <p>
+          My design style blends elegance and creativity, with a deep
+          appreciation for the beauty of simplicity. I gravitate toward refined
+          serif typefaces, soft pastel color palettes, and carefully crafted
+          mockups that bring each project to life. Whether I'm sketching by hand
+          or designing digitally, my focus is on creating thoughtful visuals
+          that tell a story, evoke emotion, and reflect intentional detail in
+          every element.
+        </p>
+      </section>
+
+      <section class="steps">
+        <div class="step-box">
+          <h2>3 steps process</h2>
+          <div>
+            <h3>Onboard</h3>
+            <p>
+              This is where our collaboration begins. I take the time to
+              understand your vision, goals, and the story behind your brand or
+              project...
+            </p>
+
+            <h3>Creation Process</h3>
+            <p>
+              With a clear vision in mind, I move into the design
+              phase—sketching concepts, refining layouts, choosing typefaces...
+            </p>
+
+            <h3>Delivery</h3>
+            <p>
+              After polishing the final design, I prepare all the necessary
+              files and formats for a smooth hand-off...
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-me">
+        <h2>About me</h2>
+        <div class="about-content">
+          <div class="text">
+            <h3>From Brazil to the World</h3>
+            <p>
+              I'm a Brazilian creative with a passion for design, drawing, and
+              bringing ideas to life. I graduated in Marketing and Social Media
+              at Greystone College and further expanded my skills in Web Design
+              at Humber College...
+            </p>
+          </div>
+          <img src="annie-photo.png" alt="Annie Beatrizti photo" />
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <a href="mailto:anniebeatrizti@gmail.com" class="button">Contact me</a>
+        <div class="info">
+          <p><strong>Phone:</strong> +1 (437) 263-5368</p>
+          <p><strong>Email:</strong> anniebeatrizti@gmail.com</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const nav = document.querySelector('nav');
+      
+        toggle.addEventListener('click', () => {
+          toggle.classList.toggle('open');
+      
+          if (nav.classList.contains('show')) {
+            nav.classList.remove('show');
+            nav.classList.add('hide');
+      
+            // Espera o tempo da animação de saída antes de ocultar o menu
+            setTimeout(() => {
+              nav.classList.remove('hide');
+              nav.style.display = 'none';
+            }, 300);
+          } else {
+            nav.style.display = 'flex';
+            nav.classList.add('show');
+          }
+        });
+      </script>      
+      
+  </body>
+</html>

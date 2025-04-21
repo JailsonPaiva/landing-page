@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0rem 2rem;
+  font-family: "Gelasio", serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+
+}
+
+/* Estilos gerais do header fixo */
+header {
+  height: 6rem;
+  width: 100%;
+  padding: 0 2rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  background: white;
+  /* border: 1px solid; */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.logo {
+  height: 5rem;
+  display: block;
+  /* border: 1px solid black; */
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav a {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #000;
+
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: #6a558a;
+  transition: ease-in-out .3s;
+}
+
+
+nav a:last-child:hover {
+  background-color: white;
+}
+
+.contact-btn {
+  background-color: #6a558a;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+}
+
+/* main {
+  padding-top: 100px;
+} */
+
+.hero {
+  height: 100vh;
+  padding-left: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  
+  background: url('MyLogoMockup\ 1.png') center/cover no-repeat;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: white;
+  max-width: 650px;
+  margin-bottom: 1rem;
+}
+
+.button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  
+  display: inline-block;
+  background: #6a558a;
+  color: white;
+  
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  
+  border-radius: 8px;
+}
+
+.showcase {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.showcase h2 {
+  padding: 2rem;
+  font-size: 3.75rem;
+  display: block;
+}
+
+.showcase h2::before {
+  content: '';
+  height: 2px;
+  width: 30%;
+  margin-right: 30px;
+
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #000;
+}
+
+.showcase h2::after {
+  content: '';
+  height: 2px;
+  width: 30%;
+  margin-left: 30px;
+
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #000;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.my-work {
+  padding: 4rem 2rem;
+  background-color: #f7f4f8;
+}
+
+.steps {
+  background-color: #6a558a;
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.step-box {
+  max-width: 800px;
+  margin: auto;
+}
+
+.step-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.step-box h3 {
+  margin-top: 1.5rem;
+}
+
+.about-me {
+  padding: 4rem 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-content .text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-content img {
+  flex: 1;
+  max-width: 300px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.contact {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f7f4f8;
+}
+
+.contact .info {
+  margin-top: 1rem;
+}
+
+/* Menu hamburguer padrão */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animação de entrada para o menu mobile */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    padding: 1rem;
+    display: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav.show {
+    display: flex;
+    animation: slideFadeIn 0.3s ease forwards;
+  }
+
+  nav.hide {
+    animation: slideFadeOut 0.3s ease forwards;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+
+
+/* ======== RESPONSIVO ======== */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+
+    flex-direction: row;
+    align-items: center;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 0.75rem;
+  }
+
+  nav a {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .hero {
+    padding: 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-box h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .step-box h2,
+  .showcase h2,
+  .my-work h2 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+}
