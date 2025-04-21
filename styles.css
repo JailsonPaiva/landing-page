@@ -160,56 +160,115 @@ nav a:last-child:hover {
 
 .my-work {
   padding: 4rem 2rem;
-  background-color: #f7f4f8;
 }
 
 .steps {
   background-color: #6a558a;
+  border-radius: 20px;
   color: white;
   padding: 4rem 2rem;
 }
 
 .step-box {
-  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
   margin: auto;
 }
 
 .step-box h2 {
-  font-size: 2.5rem;
+  font-size: 6rem;
   margin-bottom: 2rem;
 }
 
 .step-box h3 {
+  font-size: 2.5rem;
   margin-top: 1.5rem;
 }
 
+.step-text{
+  font-size: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+.step-text-box :last-child{
+  border:none
+}
+
 .about-me {
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-me h2:before {
+  content: '';
+  height: 2px;
+  width: 30%;
+  margin-right: 30px;
+
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #000;
+}
+
+.about-me h2::after {
+  content: '';
+  height: 2px;
+  width: 30%;
+  margin-left: 30px;
+
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #000;
+}
+
+.about-me h2{
+  width: 100%;
+  font-size: 3rem;
+  display: block;
+  text-align: center;
 }
 
 .about-content {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 4rem;
+  
 }
 
 .about-content .text {
-  flex: 1;
-  min-width: 300px;
+  width: 50%;
+  gap: 1rem;
+}
+
+.about-content .text h3 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.about-content .text p {
+  font-size: 1.25rem;
+  margin-top: 2rem;
 }
 
 .about-content img {
-  flex: 1;
-  max-width: 300px;
+  width: 450px;
+  height: 500px;
   border-radius: 10px;
-  width: 100%;
+  
 }
 
 .contact {
   padding: 4rem 2rem;
   text-align: center;
-  background-color: #f7f4f8;
 }
 
 .contact .info {
@@ -233,6 +292,46 @@ nav a:last-child:hover {
   background: #333;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+.contact h2:before {
+  content: '';
+  height: 2px;
+  width: 30%;
+  margin-right: 30px;
+
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #000;
+}
+
+.contact h2::after {
+  content: '';
+  height: 2px;
+  width: 30%;
+  margin-left: 30px;
+
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #000;
+}
+
+.contact h2{
+  width: 100%;
+  font-size: 3rem;
+  display: block;
+  text-align: center;
+}
+
+.contact-content {
+  gap: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-content p {
+  text-align: left;
 }
 
 /* Animação de entrada para o menu mobile */
